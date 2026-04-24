@@ -1,6 +1,8 @@
 #include "Span.hpp"
 #include "../colors.hpp"
 
+
+// tengo que añadir el operador de copiar y tal !!!!!!!!!!!!!!!!!!!!!!!!!!!!
 int main(void) {
     std::cout << MAGENTA << "\n*´¯`*..*´¯`* [ #1 check shortestSpan() with 0 elements ] *´¯`*..*´¯`* " << RESET << std::endl;
     try {
