@@ -9,30 +9,17 @@
 #include <vector>
 #include <ctime>
 
-class MutantStack {
+template <typename T>
+class MutantStack : public std::stack<T>{
     private:
-        MutantStack();
-        std::stack<int> _vec;
-    public:
-    
-        MutantStack(unsigned int N);
-        ~MutantStack();
-
-        template <typename T>
-        void pushMS(T const &item) {
-            push(item);
-        }
-
-        template <typename T>
-        void popMS(T const &item) {
-            pop(item);
-        }
-
-        template <typename T>
-        void swapMS(T const &other) {
-            swap(other);
-        }
         
+    public:
+        MutantStack();
+        MutantStack(const MutantStack &other);
+        MutantStack &operator=(const MutantStack &other);
+        ~MutantStack();
+        std::deque<T>::const_iterator begin();
+        std::deque<T>::const_iterator end();   
 } ;
 
 #endif

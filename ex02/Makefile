@@ -1,10 +1,10 @@
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = span
+NAME = mutant
 
 SRC = main.cpp \
-Span.cpp
+MutantStack.cpp
 	
 OBJ_DIR = obj
 
