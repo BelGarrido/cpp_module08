@@ -14,12 +14,24 @@ class MutantStack : public std::stack<T>{
     private:
         
     public:
-        MutantStack();
-        MutantStack(const MutantStack &other);
-        MutantStack &operator=(const MutantStack &other);
-        ~MutantStack();
-        std::deque<T>::const_iterator begin();
-        std::deque<T>::const_iterator end();   
+        MutantStack(){}
+        MutantStack(const MutantStack &other) : std::stack<T>(other) {}
+        MutantStack &operator=(const MutantStack &other) {
+                std::stack<T>::operator=(other);
+                return *this;
+        }
+        ~MutantStack(){}
+        typename std::stack<T>::container_type::iterator beginMs() {
+            typename std::stack<T>::container_type::iterator result = this->c.begin();
+            return result;
+        }
+        typename std::stack<T>::container_type::iterator endMs() {
+            typename std::stack<T>::container_type::iterator result = this->c.end();
+            return result;
+        }
+
+
+        
 } ;
 
 #endif

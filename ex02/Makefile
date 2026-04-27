@@ -4,7 +4,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = mutant
 
 SRC = main.cpp \
-MutantStack.cpp
+#MutantStack.cpp
 	
 OBJ_DIR = obj
 

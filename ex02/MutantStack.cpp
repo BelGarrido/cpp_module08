@@ -1,10 +1,18 @@
 #include "MutantStack.hpp"
 
-MutantStack::MutantStack() {}
+template<typename T>
+MutantStack<T>::MutantStack() {
 
-MutantStack::MutantStack(unsigned int N) {
-    _vec.reserve(N);
+}
+template<typename T>
+MutantStack<T>::MutantStack(const MutantStack<T> &other) : std::stack<T>(other) {
 }
 
-MutantStack::~MutantStack() {}
+template<typename T>
+MutantStack<T> &MutantStack<T>::operator=(const MutantStack &other) {
+    std::stack<T>::operator=(other);
+    return *this;
+}
+template<typename T>
+MutantStack<T>::~MutantStack() {}
 
