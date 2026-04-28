@@ -11,8 +11,7 @@
 
 template <typename T>
 class MutantStack : public std::stack<T>{
-    private:
-        
+
     public:
         MutantStack(){}
         MutantStack(const MutantStack &other) : std::stack<T>(other) {}
@@ -29,9 +28,6 @@ class MutantStack : public std::stack<T>{
             typename std::stack<T>::container_type::iterator result = this->c.end();
             return result;
         }
-
-
-        
 } ;
 
 #endif
