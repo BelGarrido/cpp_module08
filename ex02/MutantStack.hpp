@@ -11,8 +11,9 @@
 
 template <typename T>
 class MutantStack : public std::stack<T>{
-
+    
     public:
+        typedef typename std::stack<T>::container_type::iterator iterator; 
         MutantStack(){}
         MutantStack(const MutantStack &other) : std::stack<T>(other) {}
         MutantStack &operator=(const MutantStack &other) {
@@ -20,11 +21,11 @@ class MutantStack : public std::stack<T>{
                 return *this;
         }
         ~MutantStack(){}
-        typename std::stack<T>::container_type::iterator beginMs() {
+        typename std::stack<T>::container_type::iterator begin() {
             typename std::stack<T>::container_type::iterator result = this->c.begin();
             return result;
         }
-        typename std::stack<T>::container_type::iterator endMs() {
+        typename std::stack<T>::container_type::iterator end() {
             typename std::stack<T>::container_type::iterator result = this->c.end();
             return result;
         }
