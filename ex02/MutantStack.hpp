@@ -14,19 +14,34 @@ class MutantStack : public std::stack<T>{
     
     public:
         typedef typename std::stack<T>::container_type::iterator iterator; 
+        typedef typename std::stack<T>::container_type::iterator const_iterator;
+
         MutantStack(){}
+
         MutantStack(const MutantStack &other) : std::stack<T>(other) {}
+
         MutantStack &operator=(const MutantStack &other) {
                 std::stack<T>::operator=(other);
                 return *this;
         }
+
         ~MutantStack(){}
-        typename std::stack<T>::container_type::iterator begin() {
-            typename std::stack<T>::container_type::iterator result = this->c.begin();
+
+        iterator begin() {
+            iterator result = this->c.begin();
             return result;
         }
-        typename std::stack<T>::container_type::iterator end() {
-            typename std::stack<T>::container_type::iterator result = this->c.end();
+        iterator end() {
+            iterator result = this->c.end();
+            return result;
+        }
+
+        const_iterator begin() const {
+            const_iterator result = this->c.begin();
+            return result;
+        }
+        const_iterator end() const {
+            const_iterator result = this->c.end();
             return result;
         }
 } ;
